@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  server:
+    build: ./server
+    ports:
+      - "3000:3000" # Map host port 3000 to container port 3000
+    environment:
+      - NODE_ENV=production
+
+  client:
+    build: ./client
+    ports:
+      - "3001:3001" # Map host port 3001 to container port 3001
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - server
