@@ -1,110 +1,113 @@
-This project can be started using Yarn:
+# Project Setup Guide
 
-To install Yarn, you need to have Node.js installed on your system because Yarn is a package manager that depends on Node.js and npm (Node Package Manager). Here's how to install Yarn on different operating systems:
+Welcome to the setup guide for this project. This document will walk you through the steps to get the project up and running on your local machine using Yarn for dependency management.
 
-### Windows
+## Prerequisites
 
-1. **Via Installer:**
-   - Download the Yarn installer from the [official Yarn website](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
-   - Run the installer and follow the instructions to complete the installation.
+Before you begin, ensure that you have **Node.js** installed on your system, as Yarn is a Node.js-based package manager. If Node.js is not installed, download and install it from [Node.js official website](https://nodejs.org/).
 
-2. **Via npm:**
-   - If you have Node.js and npm already installed, you can install Yarn using npm by running the following command in your command prompt:
-     ```bash
-     npm install --global yarn
-     ```
+## Installing Yarn
 
-### macOS
+Yarn is a fast, reliable, and secure dependency management tool. Follow the instructions below to install Yarn on your machine:
 
-1. **Via Homebrew:**
-   - If you have Homebrew installed, you can easily install Yarn by running the following command in your terminal:
-     ```bash
-     brew install yarn
-     ```
-   - If you don't have Node.js installed, Homebrew will install it as a dependency of Yarn.
+### For Windows Users:
 
-2. **Via npm:**
-   - If you have Node.js and npm already installed, you can install Yarn using npm by running the following command in your terminal:
-     ```bash
-     npm install --global yarn
-     ```
+- **Using the Installer:**
+  1. Download the Yarn installer from the [Yarn official website](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
+  2. Run the installer and follow the on-screen instructions.
 
-### Linux
+- **Using npm:**
+  If Node.js and npm are already installed, you can add Yarn globally via npm:
+  ```bash
+  npm install --global yarn
+  ```
 
-1. **Via Debian/Ubuntu (APT) Package Manager:**
-   - First, configure the Yarn APT repository by running the following commands:
-     ```bash
-     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-     ```
-   - Then, update your package list and install Yarn:
-     ```bash
-     sudo apt update && sudo apt install yarn
-     ```
-   - Note: If you don't want Node.js installed as a dependency, you can run `sudo apt install --no-install-recommends yarn`.
+### For macOS Users:
 
-2. **Via npm:**
-   - If you have Node.js and npm already installed, you can install Yarn using npm by running the following command:
-     ```bash
-     npm install --global yarn
-     ```
+- **Using Homebrew:**
+  If you have Homebrew installed, simply run:
+  ```bash
+  brew install yarn
+  ```
+  Homebrew will also install Node.js if it's not already installed.
 
-### Verifying Installation
+- **Using npm:**
+  Alternatively, use npm to install Yarn globally:
+  ```bash
+  npm install --global yarn
+  ```
 
-After installing Yarn, you can verify it by running:
+### For Linux Users:
 
+- **Using the APT Package Manager (Debian/Ubuntu):**
+  Configure the Yarn repository and install Yarn with:
+  ```bash
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  sudo apt update && sudo apt install yarn
+  ```
+  To avoid installing Node.js, use `sudo apt install --no-install-recommends yarn`.
+
+- **Using npm:**
+  If npm is available, install Yarn globally:
+  ```bash
+  npm install --global yarn
+  ```
+
+### Verifying Yarn Installation
+
+Confirm Yarn is installed by checking its version:
 ```bash
 yarn --version
 ```
 
-This command should display the version of Yarn installed on your system, indicating that Yarn has been successfully installed.
+## Setting Up the Project
 
-### Note
+This project consists of separate client and server components, each with its own dependencies.
 
-- The instructions above may change as new versions of Yarn are released, so it's a good idea to check the [official Yarn installation guide](https://classic.yarnpkg.com/en/docs/install/) for the most up-to-date instructions.
-- Yarn has two versions: Classic (1.x) and Berry (2.x). The instructions provided here are for Yarn Classic. If you're interested in Yarn Berry, you can find more information on the [official Yarn website](https://yarnpkg.com/).
+### Setting Up the Server
 
-### Installing Dependencies for the Server
+1. Navigate to the server directory:
+   ```bash
+   cd path/to/project/server
+   ```
+2. Install server dependencies:
+   ```bash
+   yarn install
+   ```
 
-1. Open your terminal and navigate to the server directory within your project:
+### Setting Up the Client
 
-    ```bash
-    cd path/to/your/project/server
-    ```
+1. Navigate to the client directory:
+   ```bash
+   cd path/to/project/client
+   ```
+2. Install client dependencies:
+   ```bash
+   yarn install
+   ```
 
-2. Run the following command to install the server dependencies as defined in the `package.json` file located in the server directory:
+## Running the Project
 
-    ```bash
-    yarn install
-    ```
+You'll need two terminal instances to run the client and server simultaneously.
 
-### Installing Dependencies for the Client
+- **Server**:
+  In the server directory, start the server with:
+  ```bash
+  yarn start
+  ```
 
-1. After you've installed the server dependencies, navigate to the client directory:
+- **Client**:
+  In the client directory, start the React app with:
+  ```bash
+  yarn start
+  ```
 
-    ```bash
-    cd ../client  # Assuming the client folder is at the same level as the server folder
-    ```
+The client should now be running and accessible in your browser, typically at `http://localhost:3000`, and the server will be listening for requests.
 
-    Adjust the path according to your project's structure if necessary.
+## Notes
 
-2. Install the client dependencies with Yarn:
+- The provided installation commands are for Yarn Classic (v1.x). For Yarn Berry (v2.x), refer to the [Yarn official documentation](https://yarnpkg.com/).
+- For the most up-to-date installation instructions and troubleshooting, visit the [Yarn Installation Guide](https://classic.yarnpkg.com/en/docs/install/).
 
-    ```bash
-    yarn install
-    ```
-
-### Running the Project
-
-#Requires 2 terminals:
-- Server: To run the server, while in the server directory, start it with:
-
-    ```bash
-    yarn start
-    ```
-
-- Client: Similarly, to run the client, navigate to the client directory and start it with:
-
-    ```bash
-    yarn start
-    ```
+We hope this guide helps you set up the project smoothly. Happy coding!
