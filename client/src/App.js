@@ -2,7 +2,7 @@ import './App.css';
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("http://130.61.144.100:3001");
 
 function App() {
   const defaultImage = 'https://cdn.midjourney.com/69c3381f-d0ab-4a15-800b-fee1677878c6/0_0.webp'; // Replace with your default image URL

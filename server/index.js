@@ -9,7 +9,7 @@ let entries = []; // To store all the entries
 const rooms = {}; // Store room information
 const io = new Server(server,{
     cors:{
-        origin: "http://localhost:3000",
+        origin: "http://130.61.144.100:3000",
         methods: ["GET","POST"],
     }
 })
